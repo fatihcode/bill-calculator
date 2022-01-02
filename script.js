@@ -26,8 +26,8 @@ function fatura(val) {
     kdv = tüketim * 0.1808
     total = tüketim + btv + kdv
 
-    console.log(`Aktif Enerji Bedeli ${(tüketim*0.641425947570546).toFixed(2)} TL`)
-    console.log(`Dağıtım Bedeli ${(tüketim*0.358574052429454).toFixed(2)} TL`)
+    console.log(`Aktif Enerji Bedeli ${(tüketim*0.641).toFixed(2)} TL`)
+    console.log(`Dağıtım Bedeli ${(tüketim*0.359).toFixed(2)} TL`)
     console.warn(`Toplam Tüketim Bedeli ${(tüketim).toFixed(2)} TL`)
 
     console.log(`BTV ${(btv).toFixed(2)} TL`)
