@@ -3,27 +3,35 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 body {
-    background-color: #e3ebff;
-    font-family: 'Lato', sans-serif;
+    background-image: url(pattern-background-desktop.svg) ;
+    background-repeat: repeat-x;
+    background-position: top;
+    /* background-color: #e3ebff; */
     /* color: white; */
-    /* display: flex; */
-    /* min-height: 90vh; */
+    display: flex;
+    min-height: 90vh;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin: 40px 0;
 }
 
-h1 {
-    text-align: center;
+h1{
+    color: cornflowerblue;
+    padding: 0 20px;
+    font-weight: 400;
+    font-size: 50px;
+    /* background-color: chartreuse; */
+    /* font-size: 20px; */
 }
 
 main {
-    background-color: white;
-    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
     padding: 30px;
     display: flex;
     width: 500px;
@@ -32,6 +40,9 @@ main {
     align-items: center;
     text-align: center;
     flex-direction: column;
+    
+    box-shadow: 4px 4px 12px rgba(190, 190, 190, 0.8);
+   
 }
 
 section {
@@ -44,7 +55,7 @@ section {
 
 .btnGrp{
     display: inline-flex;
-    margin: 20px;
+    margin-top: 20px;
 }
 
 
@@ -55,45 +66,90 @@ span {
 
 button {
     display: flex;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    /* height: 20px; */
-    width: 150px;
+    justify-content: center;
+    font-size: 20px;
     background-color: cornflowerblue;
     color: #fff;
-    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    /* height: 20px; */
+    width: 150px;
     margin: 10px;
-    justify-content: center;
+    padding: 10px;
     /* font-weight: 100; */
     cursor: pointer;
+    transition: 0.3s ease;
 
 
 
 }
 
 button:hover {
-    background-color: rgb(81, 124, 204);
+    background-color: royalblue;
+    transition: 0.3s ease;
 }
 
-#input {
+#temiz{
+    background-color: white;
+    border: 1px solid crimson;
+    color: crimson;
+    transition: 0.3s ease;
+}
+#temiz:hover{
+    background-color:  crimson;
+    border: 1px solid crimson;
+    color: white;
+    transition: 0.3s ease;
+}
+
+
+input {
     display: flex;
-    background-color: rgb(236, 236, 236);
+    /* background-color: rgb(236, 236, 236); */
     border-radius: 5px;
-    border: none;
+    border: 2px solid #dfdfdf;
     /* height: 40px; */
     width: 320px;
     font-size: 20px;
     padding: 10px;
-
-    
+    transition: 0.3s ease;   
 
 }
+
+
+.wrong{
+    /* border: 2px solid crimson; */
+    background-color: rgb(252, 189, 201);
+    transition: 0.3s ease;
+}
+/* #input:hover{
+
+} */
 
 ::placeholder {
     text-align: end;
     padding: 10px;
+    color: #c7c7c7;
+    font-weight: 300
+    
 }
+
+/* #input::-webkit-input-placeholder       
+{
+  
+  text-indent: 0px; 
+
+  transition: text-indent 0.3s ease;
+
+}  */
+
+
+input:placeholder-shown {
+
+    color: #000;
+    opacity: 1;
+    
+    }
 
 
 table {
@@ -103,8 +159,11 @@ table {
 
 }
 
+
+
 tr{
     border-bottom: 1px solid #dfdfdf;
+    transition: 0.3s ease;
 }
 
 td,
@@ -115,27 +174,28 @@ th {
     text-align: start;
 }
 th {
-    text-align7: center;
-    /* background-color: #6c7ae0; */
-    /* color: white; */
-}
-tr:nth-child(even) {
-    /* background-color: #F8F6FF; */
+    text-align: center;
+    font-size: 22px;
+
 }
 
 tr:hover {
     background-color: #ececec;
+    transition: 0.3s ease;
 }
 
 tr.sub {
-    /* background-color: #c4d3f6 !important; */
     font-weight: bold;
 }
 
 tr [id]{
     text-align: end;
-    min-width: 100px;
+    min-width: 120px;
   
+}
+
+thead{
+    text-align: center ;
 }
 
 input::-webkit-outer-spin-button,

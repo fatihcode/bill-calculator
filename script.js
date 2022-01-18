@@ -25,14 +25,16 @@ button.onclick = () => {
     if (input.value > 150) {
 
         aktif = (150 * 0.7946) + ((input.value - 150) * 1.3488)
+        input.className = ""
 
     } else if (input.value > 0 && input.value <= 150) {
 
         aktif = (input.value * 0.7946)
+        input.className = ""
 
     } else {
 
-        return console.log(`Hatalı Giriş Yaptınız`)
+        input.className = "wrong"
     }
 
     dagitim = (input.value * 0.3295)
@@ -65,6 +67,9 @@ temiz.onclick = () => {
     trKdv.innerHTML = ``
     trVergi.innerHTML = ``
     trTotal.innerHTML = ``
+    
+    input.className = ""
+    input.value = ``
 }
 
 
