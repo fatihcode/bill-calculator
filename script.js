@@ -1,39 +1,41 @@
 //2022 Elektirk Faturası Hesaplama
 
-
-
 const input = document.getElementById("input")
 const button = document.getElementById("button")
-const yazdir = document.getElementById("yazdir")
+const temiz = document.getElementById("temiz")
 
+const trAktif = document.getElementById("aktif")
+const trDagitim = document.getElementById("dagitim")
+const trTüketim = document.getElementById("tüketim")
+const trEnerji = document.getElementById("enerji")
+const trBtv = document.getElementById("btv")
+const trKdv = document.getElementById("kdv")
+const trVergi = document.getElementById("vergi")
+const trTotal = document.getElementById("total")
 
+let aktif, dagitim, tüketim, enerji;
 
 input.focus()
 
 
+//-------------------------------------------------
 
 button.onclick = () => {
-    fatura(input.value)
-console.log(input.value)
-}
 
+    if (input.value > 150) {
 
-function fatura(val) {
+        aktif = (150 * 0.7946) + ((input.value - 150) * 1.3488)
 
-    if (val > 150) {
+    } else if (input.value > 0 && input.value <= 150) {
 
-        aktif = (150 * 0.7946) + ((val - 150) * 1.3488)
-
-    } else if (val > 0 && val <= 150) {
-
-        aktif = (val * 0.7946)
+        aktif = (input.value * 0.7946)
 
     } else {
 
         return console.log(`Hatalı Giriş Yaptınız`)
     }
 
-    dagitim = (val * 0.3295)
+    dagitim = (input.value * 0.3295)
     tüketim = aktif + dagitim
 
     enerji = aktif * 0.007
@@ -42,27 +44,31 @@ function fatura(val) {
 
     total = tüketim + btv + kdv + enerji
 
-    console.warn(`${input.value} kwh Tüketim İçin Fatura Ayrıntıları`)
-
-    console.log(`Aktif Enerji Bedeli      ${(aktif).toFixed(2)} TL`)
-    console.log(`Dağıtım Bedeli            ${(dagitim).toFixed(2)} TL`)
-    console.warn(`Toplam Tüketim Bedeli   ${(tüketim).toFixed(2)} TL`)
-
-    console.log(`Enerji Fonu                ${(enerji).toFixed(2)} TL`)
-    console.log(`BTV                        ${(btv).toFixed(2)} TL`)
-    console.log(`KDV                       ${(kdv).toFixed(2)} TL`)
-    console.warn(`Vergiler Toplamı         ${(enerji+btv+kdv).toFixed(2)} TL`)
-
-    console.warn(`Toplam Fatura           ${(total).toFixed(2)} TL`)
-
-
-
-
-
+    trAktif.innerHTML = `${(aktif).toFixed(2)} TL`
+    trDagitim.innerHTML = `${(dagitim).toFixed(2)} TL`
+    trTüketim.innerHTML = `${(tüketim).toFixed(2)} TL`
+    trEnerji.innerHTML = `${(enerji).toFixed(2)} TL`
+    trBtv.innerHTML = `${(btv).toFixed(2)} TL`
+    trKdv.innerHTML = `${(kdv).toFixed(2)} TL`
+    trVergi.innerHTML = `${(enerji+btv+kdv).toFixed(2)} TL`
+    trTotal.innerHTML = `${(total).toFixed(2)} TL`
 }
 
 
 
+temiz.onclick = () => {
+    trAktif.innerHTML = ``
+    trDagitim.innerHTML = ``
+    trTüketim.innerHTML = ``
+    trEnerji.innerHTML = ``
+    trBtv.innerHTML = ``
+    trKdv.innerHTML = ``
+    trVergi.innerHTML = ``
+    trTotal.innerHTML = ``
+}
+
+
+//-------------------------------------------------
 
 
 //Enter tuşu ile butonu çalıştırma

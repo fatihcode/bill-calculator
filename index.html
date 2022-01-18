@@ -18,26 +18,49 @@
 
         <section id="">
             <input type="number" name="" id="input" placeholder="kwh">
-            <button type="button" id="button">Hesapla</button>
+            <div class="btnGrp">
+                <button type="button" id="temiz">Temizle</button>
+                <button type="button" id="button">Hesapla</button>
+            </div>
         </section>
 
-        <section id="result">
-            <div>
-                <span>Aktif Enerji Bedeli</span><span>22</span>
-            </div>
-            <div>
-                <span>Aktif Enerji Bedeli</span><span>22</span>
-            </div>
-            <div>
-                <span>Aktif Enerji Bedeli</span><span>22</span>
-            </div>
-            <div>
-                <span>Aktif Enerji Bedeli</span><span>22</span>
-            </div>
-            <div>
-                <span>Aktif Enerji Bedeli</span><span>22</span>
-            </div>
-        </section>
+        <table id="result">
+            <tr>
+                <th colspan="2">Fatura Ayrıntıları</th>
+            </tr>
+            <tr>
+                <td>Aktif Enerji Bedeli</td>
+                <td id="aktif"></td>
+            </tr>
+            <tr>
+                <td>Dağıtım Bedeli</td>
+                <td id="dagitim"></td>
+            </tr>
+            <tr class="sub">
+                <td>Toplam Tüketim Bedeli</td>
+                <td id="tüketim"></td>
+            </tr>
+            <tr>
+                <td>Enerji Fonu</td>
+                <td id="enerji"></td>
+            </tr>
+            <tr>
+                <td>BTV</td>
+                <td id="btv"></td>
+            </tr>
+            <tr>
+                <td>KDV</td>
+                <td id="kdv"></td>
+            </tr>
+            <tr class="sub">
+                <td>Vergiler Toplamı</td>
+                <td id="vergi"></td>
+            </tr>
+            <tr>
+                <th>Toplam Fatura</th>
+                <th id="total"></th>
+            </tr>
+        </table>
 
     </main>
     <script src="script.js"></script>
