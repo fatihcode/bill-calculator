@@ -22,9 +22,10 @@ body {
 
 h1{
     color: cornflowerblue;
-    padding: 0 20px;
+    padding-bottom: 20px;
     font-weight: 400;
     font-size: 50px;
+    margin: 10px;
     /* background-color: chartreuse; */
     /* font-size: 20px; */
 }
@@ -119,7 +120,9 @@ input {
 
 .wrong{
     /* border: 2px solid crimson; */
-    background-color: rgb(252, 189, 201);
+    background-color: rgb(255, 214, 222);
+    color: crimson;
+    /* font-weight: bold; */
     transition: 0.3s ease;
 }
 /* #input:hover{
@@ -169,8 +172,8 @@ tr{
 td,
 th {
    
-    padding: 14px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 17px;
     text-align: start;
 }
 th {

@@ -22,19 +22,28 @@ input.focus()
 
 button.onclick = () => {
 
-    if (input.value > 150) {
+    if (input.value <= 0 || input.value > 99999) {
+
+        let loop = setInterval(() => input.className = "wrong", 1);
+
+
+        setTimeout(() => {
+            clearInterval(loop);
+            input.className = "";
+        }, 1000);
+
+
+
+    } else if (input.value > 150) {
 
         aktif = (150 * 0.7946) + ((input.value - 150) * 1.3488)
-        input.className = ""
 
-    } else if (input.value > 0 && input.value <= 150) {
+
+    } else if (input.value <= 150) {
 
         aktif = (input.value * 0.7946)
-        input.className = ""
 
-    } else {
 
-        input.className = "wrong"
     }
 
     dagitim = (input.value * 0.3295)
@@ -46,14 +55,55 @@ button.onclick = () => {
 
     total = tüketim + btv + kdv + enerji
 
-    trAktif.innerHTML = `${(aktif).toFixed(2)} TL`
-    trDagitim.innerHTML = `${(dagitim).toFixed(2)} TL`
-    trTüketim.innerHTML = `${(tüketim).toFixed(2)} TL`
-    trEnerji.innerHTML = `${(enerji).toFixed(2)} TL`
-    trBtv.innerHTML = `${(btv).toFixed(2)} TL`
-    trKdv.innerHTML = `${(kdv).toFixed(2)} TL`
-    trVergi.innerHTML = `${(enerji+btv+kdv).toFixed(2)} TL`
-    trTotal.innerHTML = `${(total).toFixed(2)} TL`
+    let loop1 = setInterval(() => {
+        trAktif.innerHTML = `${(aktif).toFixed(2)} TL`
+    }, 50);
+
+    let loop2 = setInterval(() => {
+        trDagitim.innerHTML = `${(dagitim).toFixed(2)} TL`;
+        clearInterval(loop1)
+    }, 100);
+
+    let loop3 = setInterval(() => {
+        trTüketim.innerHTML = `${(tüketim).toFixed(2)} TL`;
+        clearInterval(loop2)
+    }, 150);
+
+    let loop4 = setInterval(() => {
+        trEnerji.innerHTML = `${(enerji).toFixed(2)} TL`;
+        clearInterval(loop3)
+    }, 200);
+
+    let loop5 = setInterval(() => {
+        trBtv.innerHTML = `${(btv).toFixed(2)} TL`;
+        clearInterval(loop4)
+    }, 250);
+
+    let loop6 = setInterval(() => {
+        trKdv.innerHTML = `${(kdv).toFixed(2)} TL`;
+        clearInterval(loop5)
+    }, 300);
+
+    let loop7 = setInterval(() => {
+        trVergi.innerHTML = `${(enerji+btv+kdv).toFixed(2)} TL`;
+        clearInterval(loop6)
+    }, 350);
+    
+    let loop8 = setInterval(() => {
+        trTotal.innerHTML = `${(total).toFixed(2)} TL`;
+        clearInterval(loop7)
+    }, 400);
+
+
+    setTimeout(() => {
+        clearInterval(loop8);
+    }, 400);
+
+
+
+
+
+
 }
 
 
@@ -67,7 +117,7 @@ temiz.onclick = () => {
     trKdv.innerHTML = ``
     trVergi.innerHTML = ``
     trTotal.innerHTML = ``
-    
+
     input.className = ""
     input.value = ``
 }
