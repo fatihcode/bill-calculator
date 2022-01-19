@@ -22,10 +22,12 @@ input.focus()
 
 button.onclick = () => {
 
-    if (!input.value || input.value <= 0 || input.value > 9999) {
+    if (!input.value || input.value <= 0 || input.value > 99999) {
 
         input.className = "wrong";
-        setTimeout(() => input.className = "", 1000);
+        setTimeout(() => {
+            input.className = "", clear()
+        }, 1000);
 
     } else {
 
@@ -94,6 +96,10 @@ button.onclick = () => {
 
 
 temiz.onclick = () => {
+    clear()
+}
+
+function clear() {
     trAktif.innerHTML = `0 ₺`
     trDagitim.innerHTML = `0 ₺`
     trTüketim.innerHTML = `0 ₺`
