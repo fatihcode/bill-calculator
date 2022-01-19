@@ -1,5 +1,3 @@
-//2022 Elektirk Faturası Hesaplama
-
 const input = document.getElementById("input")
 const button = document.getElementById("button")
 const temiz = document.getElementById("temiz")
@@ -12,8 +10,6 @@ const trBtv = document.getElementById("btv")
 const trKdv = document.getElementById("kdv")
 const trVergi = document.getElementById("vergi")
 const trTotal = document.getElementById("total")
-
-
 
 input.focus()
 
@@ -47,67 +43,39 @@ button.onclick = () => {
 
         let total = tüketim + btv + kdv + enerji
 
+        setTimeout(() => trAktif.innerHTML = `${(aktif).toFixed(2)} ₺`, 30);
+        setTimeout(() => trDagitim.innerHTML = `${(dagitim).toFixed(2)} ₺`, 60);
+        setTimeout(() => trTüketim.innerHTML = `${(tüketim).toFixed(2)} ₺`, 90);
+        setTimeout(() => trEnerji.innerHTML = `${(enerji).toFixed(2)} ₺`, 120);
+        setTimeout(() => trBtv.innerHTML = `${(btv).toFixed(2)} ₺`, 150);
+        setTimeout(() => trKdv.innerHTML = `${(kdv).toFixed(2)} ₺`, 180);
+        setTimeout(() => trVergi.innerHTML = `${(enerji+btv+kdv).toFixed(2)} ₺`, 210);
+        setTimeout(() => trTotal.innerHTML = `${(total).toFixed(2)} ₺`, 240);
 
-        let loop1 = setInterval(() => {
-            trAktif.innerHTML = `${(aktif).toFixed(2)} ₺`
-        }, 30);
-
-        let loop2 = setInterval(() => {
-            clearInterval(loop1)
-            trDagitim.innerHTML = `${(dagitim).toFixed(2)} ₺`;
-        }, 59);
-
-        let loop3 = setInterval(() => {
-            clearInterval(loop2)
-            trTüketim.innerHTML = `${(tüketim).toFixed(2)} ₺`;
-        }, 90);
-
-        let loop4 = setInterval(() => {
-            clearInterval(loop3)
-            trEnerji.innerHTML = `${(enerji).toFixed(2)} ₺`;
-        }, 120);
-
-        let loop5 = setInterval(() => {
-            clearInterval(loop4)
-            trBtv.innerHTML = `${(btv).toFixed(2)} ₺`;
-        }, 150);
-
-        let loop6 = setInterval(() => {
-            clearInterval(loop5)
-            trKdv.innerHTML = `${(kdv).toFixed(2)} ₺`;
-        }, 180);
-
-        let loop7 = setInterval(() => {
-            clearInterval(loop6)
-            trVergi.innerHTML = `${(enerji+btv+kdv).toFixed(2)} ₺`;
-        }, 210);
-
-        let loop8 = setInterval(() => {
-            clearInterval(loop7)
-            trTotal.innerHTML = `${(total).toFixed(2)} ₺`;
-        }, 240);
-
-        setTimeout(() => {
-            clearInterval(loop8);
-        }, 240);
     }
 }
 
+
+//-------------------------------------------------
 
 
 temiz.onclick = () => {
     clear()
 }
 
+
+//-------------------------------------------------
+
+
 function clear() {
-    trAktif.innerHTML = `0 ₺`
-    trDagitim.innerHTML = `0 ₺`
-    trTüketim.innerHTML = `0 ₺`
-    trEnerji.innerHTML = `0 ₺`
-    trBtv.innerHTML = `0 ₺`
-    trKdv.innerHTML = `0 ₺`
-    trVergi.innerHTML = `0 ₺`
-    trTotal.innerHTML = `0 ₺`
+    setTimeout(() => trAktif.innerHTML = `0 ₺`, 30);
+    setTimeout(() => trDagitim.innerHTML = `0 ₺`, 60);
+    setTimeout(() => trTüketim.innerHTML = `0 ₺`, 90);
+    setTimeout(() => trEnerji.innerHTML = `0 ₺`, 120);
+    setTimeout(() => trBtv.innerHTML = `0 ₺`, 150);
+    setTimeout(() => trKdv.innerHTML = `0 ₺`, 180);
+    setTimeout(() => trVergi.innerHTML = `0 ₺`, 210);
+    setTimeout(() => trTotal.innerHTML = `0 ₺`, 240);
 
     input.className = ""
     input.value = ``
