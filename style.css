@@ -44,6 +44,12 @@ section {
     flex-direction: column;
 }
 
+.inputGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
 
 input {
     display: flex;
@@ -54,7 +60,15 @@ input {
     padding: 10px;
     transition: 0.3s ease;
     margin: 20px 0;
+}
 
+.kwh {
+    position: absolute;
+    margin-right: 15px;
+    color: #c7c7c7;
+    font-weight: 300;
+    font-size: 20px;
+    user-select: none;
 }
 
 input::-webkit-outer-spin-button,
@@ -68,15 +82,6 @@ input::-webkit-inner-spin-button {
     color: crimson;
     transition: 0.3s ease;
 }
-
-
-::placeholder {
-    text-align: end;
-    padding: 10px;
-    color: #c7c7c7;
-    font-weight: 300
-}
-
 
 .btnGrp {
     display: inline-flex;
