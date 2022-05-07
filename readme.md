@@ -2,4 +2,4 @@
 
 Ayrıntılı fatura hesaplaması yapıp ekrana yazdırır.
 
-İncelemek için; [https://fatihqaz.github.io/fatura/](https://fatihqaz.github.io/fatura/)
+İncelemek için; [https://fatihcode.github.io/bill-calculator/](https://fatihcode.github.io/bill-calculator/)
